@@ -93,8 +93,8 @@ document.getElementById("btnAxios").addEventListener("click", function () {
 $("btnImg").on("click",function(){
     fetch("https://jsonplaceholder.typicode.com/recipes/1")
         .then(function(response){
-            f (!response.ok) {
-                throw new Error("Network response was not ok");
+            if(!response.ok){
+                throw new Error("Network response was not ok")
             }
             return response.json();
         })
